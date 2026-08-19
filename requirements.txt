@@ -1,0 +1,71 @@
+# =============================================================================
+# Vendor Reliability Intelligence Platform — Production Dependencies
+# =============================================================================
+# Install : pip install -r requirements.txt
+# Upgrade : pip install --upgrade -r requirements.txt
+# Freeze  : pip freeze > requirements.lock
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# CORE FRAMEWORK
+# -----------------------------------------------------------------------------
+# FastAPI — async web framework; [standard] pulls in uvicorn, httptools, etc.
+fastapi==0.139.2
+
+# Uvicorn — lightning-fast ASGI server (standard extras include uvloop + httptools)
+uvicorn[standard]==0.51.0
+
+# Pydantic — data validation & settings management (v2 with Rust core)
+pydantic==2.13.4
+pydantic-settings==2.9.1
+
+
+# -----------------------------------------------------------------------------
+# DATABASE — PostgreSQL + SQLAlchemy + Alembic
+# -----------------------------------------------------------------------------
+# SQLAlchemy — async-ready ORM with 2.0-style query API
+sqlalchemy==2.0.51
+
+# Alembic — database migration tool tightly integrated with SQLAlchemy
+alembic==1.18.5
+
+# asyncpg — high-performance async PostgreSQL driver (used by SQLAlchemy async)
+asyncpg==0.31.0
+
+# psycopg2-binary — sync PostgreSQL adapter (needed by Alembic migrations)
+psycopg2-binary==2.9.12
+
+
+# -----------------------------------------------------------------------------
+# AUTHENTICATION & SECURITY
+# -----------------------------------------------------------------------------
+# PyJWT — JSON Web Token encoding/decoding (industry-standard JWT library)
+PyJWT==2.13.0
+
+# python-jose — JWT utilities compatible with FastAPI and security flows
+python-jose[cryptography]==3.5.0
+
+# passlib — password hashing framework (supports bcrypt, argon2, scrypt)
+passlib==1.7.4
+
+# bcrypt — backend for passlib's bcrypt hasher (adaptive cost-factor hashing)
+# Pin below 4.1 because passlib 1.7.4 expects bcrypt.__about__ metadata.
+bcrypt==4.0.1
+
+
+# -----------------------------------------------------------------------------
+# ENVIRONMENT & CONFIGURATION
+# -----------------------------------------------------------------------------
+# python-dotenv — loads .env files into os.environ for 12-factor app config
+python-dotenv==1.2.2
+
+
+# -----------------------------------------------------------------------------
+# REQUEST HANDLING & VALIDATION
+# -----------------------------------------------------------------------------
+# python-multipart — parses multipart/form-data for file uploads
+python-multipart==0.0.32
+
+# email-validator — RFC-compliant email address validation (used by Pydantic)
+email-validator==2.3.0

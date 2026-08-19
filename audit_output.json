@@ -1,0 +1,824 @@
+{
+  "users": [
+    {
+      "user_id": "7ff63cdf-02d6-4871-bd51-6ab233f595ed",
+      "username": "testuser",
+      "email": "testuser@example.com",
+      "password": "password123",
+      "role_id": 2,
+      "role_name": "Procurement Manager"
+    }
+  ],
+  "api_audit": [
+    {
+      "endpoint": "/api/v1/auth/login",
+      "method": "POST",
+      "summary": "User Login",
+      "tags": [
+        "Authentication"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\"],\"msg\":\"Field required\",\"input\":null}]}"
+    },
+    {
+      "endpoint": "/api/v1/auth/register",
+      "method": "POST",
+      "summary": "Register a new user",
+      "tags": [
+        "Authentication"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\"],\"msg\":\"Field required\",\"input\":null}]}"
+    },
+    {
+      "endpoint": "/api/v1/auth/forgot-password",
+      "method": "POST",
+      "summary": "Forgot password request",
+      "tags": [
+        "Authentication"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\"],\"msg\":\"Field required\",\"input\":null}]}"
+    },
+    {
+      "endpoint": "/api/v1/auth/reset-password",
+      "method": "POST",
+      "summary": "Reset password execution",
+      "tags": [
+        "Authentication"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\"],\"msg\":\"Field required\",\"input\":null}]}"
+    },
+    {
+      "endpoint": "/api/v1/auth/me",
+      "method": "GET",
+      "summary": "Current authenticated user",
+      "tags": [
+        "Authentication"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/auth/admin-check",
+      "method": "GET",
+      "summary": "Admin role check",
+      "tags": [
+        "Authentication"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/users",
+      "method": "POST",
+      "summary": "Create a new user",
+      "tags": [
+        "Users"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\"],\"msg\":\"Field required\",\"input\":null}]}"
+    },
+    {
+      "endpoint": "/api/v1/users",
+      "method": "GET",
+      "summary": "Get all users",
+      "tags": [
+        "Users"
+      ],
+      "status_code": 200,
+      "response_sample": "[{\"user_id\":\"f2df1b08-3b1b-4051-9be7-5ffa6f1cafb9\",\"username\":\"admin_vprf_97563d\",\"full_name\":\"Perf Admin\",\"email\":\"admin_vprf_97563d@example.com\",\"role_id\":1,\"role_name\":\"Administrator\",\"is_active\":true,\"created_at\":\"2026-08-02T16:56:29.675181Z\",\"updated_at\":\"2026-08-02T16:56:29.675181Z\"},{\"user_id"
+    },
+    {
+      "endpoint": "/api/v1/users/{user_id}",
+      "method": "GET",
+      "summary": "Get user by ID",
+      "tags": [
+        "Users"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"uuid_parsing\",\"loc\":[\"path\",\"user_id\"],\"msg\":\"Input should be a valid UUID, invalid character: found `u` at 2\",\"input\":\"{user_id}\",\"ctx\":{\"error\":\"invalid character: found `u` at 2\"}}]}"
+    },
+    {
+      "endpoint": "/api/v1/users/{user_id}",
+      "method": "PUT",
+      "summary": "Update user",
+      "tags": [
+        "Users"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"uuid_parsing\",\"loc\":[\"path\",\"user_id\"],\"msg\":\"Input should be a valid UUID, invalid character: found `u` at 2\",\"input\":\"{user_id}\",\"ctx\":{\"error\":\"invalid character: found `u` at 2\"}},{\"type\":\"missing\",\"loc\":[\"body\"],\"msg\":\"Field required\",\"input\":null}]}"
+    },
+    {
+      "endpoint": "/api/v1/users/{user_id}",
+      "method": "DELETE",
+      "summary": "Soft delete user",
+      "tags": [
+        "Users"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"uuid_parsing\",\"loc\":[\"path\",\"user_id\"],\"msg\":\"Input should be a valid UUID, invalid character: found `u` at 2\",\"input\":\"{user_id}\",\"ctx\":{\"error\":\"invalid character: found `u` at 2\"}}]}"
+    },
+    {
+      "endpoint": "/api/v1/vendors",
+      "method": "POST",
+      "summary": "Create a new vendor",
+      "tags": [
+        "Vendors"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendors",
+      "method": "GET",
+      "summary": "Get all vendors",
+      "tags": [
+        "Vendors"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendors/code/{vendor_code}",
+      "method": "GET",
+      "summary": "Get vendor by code",
+      "tags": [
+        "Vendors"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendors/{vendor_id}",
+      "method": "GET",
+      "summary": "Get vendor by ID",
+      "tags": [
+        "Vendors"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendors/{vendor_id}",
+      "method": "PUT",
+      "summary": "Update vendor",
+      "tags": [
+        "Vendors"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendors/{vendor_id}",
+      "method": "DELETE",
+      "summary": "Delete vendor",
+      "tags": [
+        "Vendors"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/requests",
+      "method": "POST",
+      "summary": "Create a procurement request",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/requests",
+      "method": "GET",
+      "summary": "Get all procurement requests",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/requests/{request_id}",
+      "method": "GET",
+      "summary": "Get procurement request by ID",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/requests/{request_id}",
+      "method": "PATCH",
+      "summary": "Update procurement request",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/requests/{request_id}/approve",
+      "method": "POST",
+      "summary": "Approve procurement request",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/requests/{request_id}/reject",
+      "method": "POST",
+      "summary": "Reject procurement request",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/requests/{request_id}/cancel",
+      "method": "POST",
+      "summary": "Cancel procurement request",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/purchase-orders",
+      "method": "POST",
+      "summary": "Create a purchase order",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/purchase-orders",
+      "method": "GET",
+      "summary": "Get all purchase orders",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/purchase-orders/{po_id}",
+      "method": "GET",
+      "summary": "Get purchase order by ID",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/purchase-orders/{po_id}",
+      "method": "PATCH",
+      "summary": "Update purchase order",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/purchase-orders/{po_id}/approve",
+      "method": "POST",
+      "summary": "Approve purchase order",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/purchase-orders/{po_id}/order",
+      "method": "POST",
+      "summary": "Mark purchase order as ordered",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/purchase-orders/{po_id}/deliver",
+      "method": "POST",
+      "summary": "Mark purchase order as delivered",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/purchase-orders/{po_id}/complete",
+      "method": "POST",
+      "summary": "Mark purchase order as completed",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/procurement/purchase-orders/{po_id}/cancel",
+      "method": "POST",
+      "summary": "Cancel purchase order",
+      "tags": [
+        "Procurement"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/invoices",
+      "method": "POST",
+      "summary": "Create an invoice",
+      "tags": [
+        "Invoices"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/invoices",
+      "method": "GET",
+      "summary": "Get all invoices",
+      "tags": [
+        "Invoices"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/invoices/{invoice_id}",
+      "method": "GET",
+      "summary": "Get invoice by ID",
+      "tags": [
+        "Invoices"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/invoices/{invoice_id}",
+      "method": "PATCH",
+      "summary": "Update invoice",
+      "tags": [
+        "Invoices"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/invoices/{invoice_id}/pay",
+      "method": "POST",
+      "summary": "Mark invoice as paid",
+      "tags": [
+        "Invoices"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/invoices/{invoice_id}/dispute",
+      "method": "POST",
+      "summary": "Mark invoice as disputed",
+      "tags": [
+        "Invoices"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/deliveries",
+      "method": "POST",
+      "summary": "Create delivery tracking record",
+      "tags": [
+        "Delivery Tracking"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/deliveries",
+      "method": "GET",
+      "summary": "Get all delivery tracking records",
+      "tags": [
+        "Delivery Tracking"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/deliveries/{delivery_id}",
+      "method": "GET",
+      "summary": "Get delivery record by ID",
+      "tags": [
+        "Delivery Tracking"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/deliveries/{delivery_id}",
+      "method": "PATCH",
+      "summary": "Update delivery tracking record",
+      "tags": [
+        "Delivery Tracking"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/deliveries/{delivery_id}/dispatch",
+      "method": "POST",
+      "summary": "Dispatch shipment",
+      "tags": [
+        "Delivery Tracking"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/deliveries/{delivery_id}/deliver",
+      "method": "POST",
+      "summary": "Mark shipment as delivered",
+      "tags": [
+        "Delivery Tracking"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/deliveries/{delivery_id}/delay",
+      "method": "POST",
+      "summary": "Mark shipment as delayed",
+      "tags": [
+        "Delivery Tracking"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/deliveries/{delivery_id}/return",
+      "method": "POST",
+      "summary": "Mark shipment as returned",
+      "tags": [
+        "Delivery Tracking"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendor-performance/ratings",
+      "method": "POST",
+      "summary": "Submit a vendor rating",
+      "tags": [
+        "Vendor Performance"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendor-performance/ratings",
+      "method": "GET",
+      "summary": "Get all vendor ratings",
+      "tags": [
+        "Vendor Performance"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendor-performance/issues",
+      "method": "POST",
+      "summary": "Report a vendor issue",
+      "tags": [
+        "Vendor Performance"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendor-performance/issues",
+      "method": "GET",
+      "summary": "Get all vendor issues",
+      "tags": [
+        "Vendor Performance"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendor-performance/issues/{issue_id}",
+      "method": "PATCH",
+      "summary": "Update or resolve vendor issue",
+      "tags": [
+        "Vendor Performance"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendor-performance/metrics",
+      "method": "POST",
+      "summary": "Record a performance metric",
+      "tags": [
+        "Vendor Performance"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendor-performance/metrics",
+      "method": "GET",
+      "summary": "Get all performance metric entries",
+      "tags": [
+        "Vendor Performance"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendor-performance/summary/{vendor_id}",
+      "method": "GET",
+      "summary": "Get real-time vendor performance summary",
+      "tags": [
+        "Vendor Performance"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/vendor-performance/rankings",
+      "method": "GET",
+      "summary": "Get vendor performance rankings",
+      "tags": [
+        "Vendor Performance"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/analytics/dashboard",
+      "method": "GET",
+      "summary": "Get executive dashboard analytics",
+      "tags": [
+        "Analytics & Reporting"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/analytics/procurement",
+      "method": "GET",
+      "summary": "Get procurement analytics",
+      "tags": [
+        "Analytics & Reporting"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/analytics/invoices",
+      "method": "GET",
+      "summary": "Get invoice & financial analytics",
+      "tags": [
+        "Analytics & Reporting"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/analytics/deliveries",
+      "method": "GET",
+      "summary": "Get delivery & logistics analytics",
+      "tags": [
+        "Analytics & Reporting"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/analytics/vendors",
+      "method": "GET",
+      "summary": "Get vendor analytics",
+      "tags": [
+        "Analytics & Reporting"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/analytics/system",
+      "method": "GET",
+      "summary": "Get system & user management analytics",
+      "tags": [
+        "Analytics & Reporting"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/reports/vendor-performance",
+      "method": "GET",
+      "summary": "Get Vendor Performance Report",
+      "tags": [
+        "Reports & Intelligence"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/reports/procurement",
+      "method": "GET",
+      "summary": "Get Procurement Spend & Request Report",
+      "tags": [
+        "Reports & Intelligence"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/reports/purchase-orders",
+      "method": "GET",
+      "summary": "Get Purchase Order Fulfillment Report",
+      "tags": [
+        "Reports & Intelligence"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/reports/compliance",
+      "method": "GET",
+      "summary": "Get Vendor Compliance & Risk Audit Report",
+      "tags": [
+        "Reports & Intelligence"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/reports/contracts",
+      "method": "GET",
+      "summary": "Get Vendor Contract Lifecycle & Renewal Report",
+      "tags": [
+        "Reports & Intelligence"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/reports/summary",
+      "method": "GET",
+      "summary": "Get Reports Dashboard Summary",
+      "tags": [
+        "Reports & Intelligence"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/reports/history",
+      "method": "GET",
+      "summary": "Get Report History & Catalogue",
+      "tags": [
+        "Reports & Intelligence"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/reports/export",
+      "method": "POST",
+      "summary": "Export or Request Report Download",
+      "tags": [
+        "Reports & Intelligence"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/contracts",
+      "method": "POST",
+      "summary": "Create a contract",
+      "tags": [
+        "Contracts"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\"],\"msg\":\"Field required\",\"input\":null}]}"
+    },
+    {
+      "endpoint": "/api/v1/contracts",
+      "method": "GET",
+      "summary": "Get all contracts",
+      "tags": [
+        "Contracts"
+      ],
+      "status_code": 200,
+      "response_sample": "[]"
+    },
+    {
+      "endpoint": "/api/v1/contracts/{contract_id}",
+      "method": "GET",
+      "summary": "Get contract by ID",
+      "tags": [
+        "Contracts"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"uuid_parsing\",\"loc\":[\"path\",\"contract_id\"],\"msg\":\"Input should be a valid UUID, invalid character: found `o` at 3\",\"input\":\"{contract_id}\",\"ctx\":{\"error\":\"invalid character: found `o` at 3\"}}]}"
+    },
+    {
+      "endpoint": "/api/v1/contracts/{contract_id}",
+      "method": "PUT",
+      "summary": "Update contract",
+      "tags": [
+        "Contracts"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"uuid_parsing\",\"loc\":[\"path\",\"contract_id\"],\"msg\":\"Input should be a valid UUID, invalid character: found `o` at 3\",\"input\":\"{contract_id}\",\"ctx\":{\"error\":\"invalid character: found `o` at 3\"}},{\"type\":\"missing\",\"loc\":[\"body\"],\"msg\":\"Field required\",\"input\":null}]}"
+    },
+    {
+      "endpoint": "/api/v1/communications",
+      "method": "POST",
+      "summary": "Send a message",
+      "tags": [
+        "Communication"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/communications",
+      "method": "GET",
+      "summary": "Get all messages",
+      "tags": [
+        "Communication"
+      ],
+      "status_code": 200,
+      "response_sample": "[]"
+    },
+    {
+      "endpoint": "/api/v1/communications/{message_id}",
+      "method": "GET",
+      "summary": "Get message by ID",
+      "tags": [
+        "Communication"
+      ],
+      "status_code": 422,
+      "response_sample": "{\"detail\":[{\"type\":\"uuid_parsing\",\"loc\":[\"path\",\"message_id\"],\"msg\":\"Input should be a valid UUID, invalid character: found `m` at 2\",\"input\":\"{message_id}\",\"ctx\":{\"error\":\"invalid character: found `m` at 2\"}}]}"
+    },
+    {
+      "endpoint": "/api/v1/settings",
+      "method": "GET",
+      "summary": "Get user and system settings",
+      "tags": [
+        "Settings"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/api/v1/settings",
+      "method": "PUT",
+      "summary": "Update settings",
+      "tags": [
+        "Settings"
+      ],
+      "status_code": 401,
+      "response_sample": "{\"detail\":\"Not authenticated\"}"
+    },
+    {
+      "endpoint": "/",
+      "method": "GET",
+      "summary": "Root Endpoint",
+      "tags": [
+        "General"
+      ],
+      "status_code": 200,
+      "response_sample": "{\"application\":\"Vendor Reliability Intelligence Platform\",\"version\":\"0.1.0\",\"docs\":\"/docs\",\"redoc\":\"/redoc\",\"health\":\"/health\"}"
+    },
+    {
+      "endpoint": "/health",
+      "method": "GET",
+      "summary": "Health Check",
+      "tags": [
+        "General"
+      ],
+      "status_code": 200,
+      "response_sample": "{\"status\":\"healthy\",\"service\":\"Vendor Reliability Intelligence Platform\",\"version\":\"0.1.0\",\"utc_time\":\"2026-08-12T14:13:18.310417+00:00\"}"
+    }
+  ]
+}
